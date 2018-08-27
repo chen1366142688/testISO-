@@ -1,5 +1,6 @@
 $(function(){
-    const regExp = /^1[3|4|5|8|7|6][0-9]\d{4,8}$/;
+    "use strict";
+    var regExp = /^1[3|4|5|8|7|6][0-9]\d{4,8}$/;
     var phoneNum,code,countShowMessage=60;
    $('#phoneNum').on('blur',function(){
        phoneNum = $(this).val();
@@ -8,8 +9,7 @@ $(function(){
         code = $(this).val();
     });
     $('.codeBox').on('click','',function(){
-        console.log(12132132132132132)
-        confirm(111111111111111)
+        confirm(111111111111111);
         if (!regExp.test(phoneNum)) {
             confirm('请输入正确的手机号');
             return;
