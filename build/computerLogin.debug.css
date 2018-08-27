@@ -49,7 +49,6 @@
   border: 0.013333rem solid rgba(0,198,147,1);
   border-radius: 0.293333rem;
   font-size: 0.32rem;
-  font-family: PingFang-SC-Regular;
   color: rgba(0,198,147,1);
   background-color: #fff;
   display: flex;
@@ -57,8 +56,6 @@
   align-items: center;
   justify-content: center;
   margin-left: 0.6rem;
-  padding-left: 0;
-  padding-right: 0;
   cursor: pointer;
 }
 
