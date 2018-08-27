@@ -56,6 +56,7 @@
 }
 .codeBox{
     margin-top:60px;
+    cursor: pointer;
 }
 .helpBox{
     width:600px;
