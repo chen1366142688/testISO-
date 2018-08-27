@@ -8,6 +8,7 @@ $(function(){
         code = $(this).val();
     });
     $('.sendCode').on('click',function(){
+        alert(111111111111111)
         if (!regExp.test(phoneNum)) {
             confirm('请输入正确的手机号');
             return;

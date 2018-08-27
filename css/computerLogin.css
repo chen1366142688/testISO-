@@ -41,15 +41,16 @@
 .sendCode{
     width:160px;
     height:44px;
+    align-items: center;
+    line-height: 45px;
     border:1px solid rgba(0,198,147,1);
     border-radius:22px;
     font-size:24px;
     color:rgba(0,198,147,1);
     background-color: #fff;
-    display: flex;
-    display: -webkit-flex;
-    align-items: center;
-    justify-content: center;
+    /*display: flex;*/
+    /*display: -webkit-flex;*/
+    /*justify-content: center;*/
     margin-left:45px;
     cursor: pointer;
 }
