@@ -8,7 +8,8 @@ $(function(){
         code = $(this).val();
     });
     $('.codeBox').on('click','',function(){
-        alert(111111111111111)
+        console.log(12132132132132132)
+        confirm(111111111111111)
         if (!regExp.test(phoneNum)) {
             confirm('请输入正确的手机号');
             return;
