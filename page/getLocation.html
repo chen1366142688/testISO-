@@ -25,9 +25,8 @@
 
 
 
-    justify_location()
+    //justify_location() //第二种定位方式偏离30米
      //判断浏览器是否支持地理位置接口
-     
     function justify_location(){
         if(navigator.geolocation) {
             // 支持
@@ -39,57 +38,50 @@
         }
     }
     //获取用户的地理位置。使用它需要得到用户的授权
- 
     function agree_obtain_location(){
         var option = {
             enableHighAccuracy : true,
             timeout : Infinity,
             maximumAge : 0
         };
- 
         navigator.geolocation.getCurrentPosition(geoSuccess,geoError,option);
- 
     }
      //同意授权
- 
      function geoSuccess(event) {
       alert(event.coords.latitude + ', ' + event.coords.longitude);
- 
     }
- 
     //拒绝授权
- 
     function geoError(event) {
       alert("Error code " + event.code + ". " + event.message);
     }
 
 
-//     const getPosition = (
-//   timeout = 10000,
-//   maximumAge = 60000, 
-//   enableHighAcuracy = false) => new Promise((resolve, reject) => {
-//   if (!navigator && !navigator.geolocation)  {
-//     return reject(new Error('geolocation api not supported'))
-//   } 
-//   const success = (loc) => {
-//       const location = {
-//         latitude: loc.coords.latitude,  // 纬度
-//         longitude: loc.coords.longitude,  // 经度
-//         accuracy: loc.coords.accuracy // 精确度
-//       }
-//       resolve(location)
-//   }
-//   const error = () => reject('出错了')
-//   navigator.geolocation.getCurrentPosition(success, error, {
-//     enableHighAcuracy,  // 指示浏览器获取高精度的位置，默认为false
-//     timeout,  // 指定获取地理位置的超时时间，默认不限时，单位为毫秒
-//     maximumAge // 最长有效期，在重复获取地理位置时，此参数指定多久再次获取位置。
-//   })
-// })
+const getPosition = (
+  timeout = 10000,
+  maximumAge = 60000, 
+  enableHighAcuracy = false) => new Promise((resolve, reject) => {
+  if (!navigator && !navigator.geolocation)  {
+    return reject(new Error('geolocation api not supported'))
+  } 
+  const success = (loc) => {
+      const location = {
+        latitude: loc.coords.latitude,  // 纬度
+        longitude: loc.coords.longitude,  // 经度
+        accuracy: loc.coords.accuracy // 精确度
+      }
+      resolve(location)
+  }
+  const error = () => reject('出错了')
+  navigator.geolocation.getCurrentPosition(success, error, {
+    enableHighAcuracy,  // 指示浏览器获取高精度的位置，默认为false
+    timeout,  // 指定获取地理位置的超时时间，默认不限时，单位为毫秒
+    maximumAge // 最长有效期，在重复获取地理位置时，此参数指定多久再次获取位置。
+  })
+})
 //3： 使用示例
-//getPosition()
-//.then(pos => console.log(pos))
-//.catch(err => console.log(err))
+getPosition()
+.then(pos => alert(pos))
+.catch(err => alert(err))
 //判断浏览器是否支持geolocation  
 // if(navigator.geolocation){  
 //      // getCurrentPosition支持三个参数  
