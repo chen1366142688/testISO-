@@ -80,7 +80,7 @@ const getPosition = (
 })
 //3： 使用示例
 getPosition()
-.then(pos => alert(pos))
+.then(pos => alert(pos.latitude),alert(pos.longitude))
 .catch(err => alert(err))
 //判断浏览器是否支持geolocation  
 // if(navigator.geolocation){  
