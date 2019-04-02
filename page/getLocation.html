@@ -31,11 +31,11 @@
     function justify_location(){
         if(navigator.geolocation) {
             // 支持
-            console.log("支持地理位置接口");
+            alert("支持地理位置接口");alert
             agree_obtain_location()
         } else {
             // 不支持
-            console.log("不支持地理位置接口");
+            alert("不支持地理位置接口");
         }
     }
     //获取用户的地理位置。使用它需要得到用户的授权
@@ -53,14 +53,14 @@
      //同意授权
  
      function geoSuccess(event) {
-        console.log(event.coords.latitude + ', ' + event.coords.longitude);
+      alert(event.coords.latitude + ', ' + event.coords.longitude);
  
     }
  
     //拒绝授权
  
     function geoError(event) {
-        console.log("Error code " + event.code + ". " + event.message);
+      alert("Error code " + event.code + ". " + event.message);
     }
 
 
